@@ -1,0 +1,26 @@
+{
+  "name": "trafilea-challenge-qa-automation",
+  "version": "1.0.0",
+  "description": "Trafilea Challenge QA Automation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andypalacio/trafilea-challenge-qa-automation"
+  },
+  "author": "Andres Palacio",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.4",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.8.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "formatter": "/usr/local/bin/cucumber-json-formatter",
+      "output": "cucumber-report.json"
+    }
+  },
+  "stepDefinitions": [
+    "cypress/e2e/[filepath]/*/.{js,ts}"
+  ]
+  }
