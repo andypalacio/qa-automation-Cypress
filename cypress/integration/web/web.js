@@ -18,7 +18,8 @@ Given(/^the user navigates to ([^"]*)$/, (expectedPage) => {
     page.closeHomePagePopUp();
 });
 
-When(/^the user enters the first product within the section "([^"]*)"\.$/, (section) => {
+When(/^the user enters the first product within the section "([^"]*)"$/, (section) => {
+
     page.visitSection(section);
     bestSellerPage.selectFirstProduct();
 });
