@@ -1,9 +1,11 @@
-const {Given, When, Then} = require( "@badeball/cypress-cucumber-preprocessor")
+const {Given, When, Then, DataTable} = require( "@badeball/cypress-cucumber-preprocessor")
 const {HomePage} = require("../../pageObjects/HomePage");
 const {possiblePages, possibleButtons} = require("../../helpers/helper");
 const {BestSellersPage} = require("../../pageObjects/BestSellersPage");
+const {CheckoutPage} = require("../../pageObjects/CheckoutPage");
 const page = new HomePage();
-const bestSellerPage = new BestSellersPage()
+const bestSellerPage = new BestSellersPage();
+const checkoutPage = new CheckoutPage();
 
 Cypress.on("uncaught:exception", (err) => {
     // Cypress and React Hydrating the document don't get along
@@ -24,15 +26,18 @@ When(/^the user enters the first product within the section "([^"]*)"$/, (sectio
     bestSellerPage.selectFirstProduct();
 });
 
-When(/^the user clicks on the “([^"]*)” button and proceed to checkout from the cart\.$/, (caption) => {
-    page.clickButton(possibleButtons[caption]);
+When(/^the user clicks on the "([^"]*)" button and proceed to checkout from the cart$/, (caption) => {
+        page.clickButton(possibleButtons[caption]);
+        bestSellerPage.showMyBag();
 });
 
-When(/^the user completes email data and shipping Address data with the following information:$/, () => {
-
+When(/^the user completes email data and shipping Address data with the following information$/, (datatable) => {
+    page.clickButton(possibleButtons['proceed to checkout']);
+    page.checkURL('checkout.shapermint.com/hc/checkout/');
+    checkoutPage.completeCheckoutFields(datatable);
 });
 
-When(/^the user completes credit card data with the following information:$/, () => {
+When(/^the user completes credit card data with the following information$/, () => {
 
 });
 

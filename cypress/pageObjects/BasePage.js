@@ -11,6 +11,10 @@ export class BasePage {
     }
 
     clickButton(caption) {
-        cy.get(`[data-testid="${caption}"]`)
+        cy.get(caption).click();
+    }
+
+    checkURL(url){
+        cy.url().should('include', url)
     }
 }

@@ -10,4 +10,9 @@ export class BestSellersPage extends BasePage {
         cy.get('[data-testid="add-to-cart"]').should('be.visible');
     }
 
+    showMyBag() {
+        cy.get('.css-7zzpxh').contains('My Bag:').should('be.visible');
+    }
+
+
 }
