@@ -1,6 +1,5 @@
 const {Given, When, Then, Datatable} = require("@badeball/cypress-cucumber-preprocessor");
 let users = [];
-let activeUser = 0;
 let lastResponse = {}
 let newUserName = '';
 
@@ -17,7 +16,6 @@ When(/^I update the user with the following data:$/, function (datatable) {
     const dat = datatable.hashes().pop()
     newUserName = dat.name
     email = dat.email.replace('[timestamp]', Date.now())
-    cy.log('EEEEEEEMAAAILLL' + email)
     cy.request({
         method: 'PATCH',
         url: `https://gorest.co.in/public/v1/users/${users[0].id}`,

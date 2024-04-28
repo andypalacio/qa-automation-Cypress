@@ -1,4 +1,4 @@
-const {Given, When, Then, DataTable} = require( "@badeball/cypress-cucumber-preprocessor")
+const {Given, When, Then, DataTable} = require("@badeball/cypress-cucumber-preprocessor")
 const {HomePage} = require("../../pageObjects/HomePage");
 const {possiblePages, possibleButtons} = require("../../helpers/helper");
 const {BestSellersPage} = require("../../pageObjects/BestSellersPage");
@@ -21,14 +21,13 @@ Given(/^the user navigates to ([^"]*)$/, (expectedPage) => {
 });
 
 When(/^the user enters the first product within the section "([^"]*)"$/, (section) => {
-
     page.visitSection(section);
     bestSellerPage.selectFirstProduct();
 });
 
 When(/^the user clicks on the "([^"]*)" button and proceed to checkout from the cart$/, (caption) => {
-        page.clickButton(possibleButtons[caption]);
-        bestSellerPage.showMyBag();
+    page.clickButton(possibleButtons[caption]);
+    bestSellerPage.showMyBag();
 });
 
 When(/^the user completes email data and shipping Address data with the following information$/, (datatable) => {
