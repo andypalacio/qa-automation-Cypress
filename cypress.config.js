@@ -27,6 +27,7 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     projectId: "bfi83g",
     supportFile: false,
+    numTestsKeptInMemory: 0,
     setupNodeEvents
   }
 

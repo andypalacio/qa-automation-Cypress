@@ -43,13 +43,13 @@ When(/^the user completes credit card data with the following information$/, (da
 });
 
 Then(/^the shipping method "([^"]*)" is displayed$/, () => {
-
+    checkoutPage.checkShippingMethod();
 });
 
-Then(/^the message "([^"]*)" within Payment Information section is not displayed$/, () => {
-
+Then(/^the message "([^"]*)" within Payment Information section is displayed$/, (errorMessage) => {
+    checkoutPage.checkCreditCardError(errorMessage);
 });
 
-Then(/^the URL contains "\/hc\/checkout\/"$/, () => {
-
+Then(/^the URL contains "([^"]*)"$/, (url) => {
+    page.checkURL(url);
 });

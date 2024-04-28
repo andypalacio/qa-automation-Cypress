@@ -10,6 +10,6 @@ Feature: As a QA, I want to validate that a user cannot complete a payment with 
     And the user completes credit card data with the following information
       | number              | mmyy  | cvv | nameOnCard    |
       | 1234 1234 1234 1234 | 01 25 | 999 | Name Lastname |
-#    Then the shipping method "Standard Delivery (4-8 business days)" is displayed
-#    And the message "Your card number is invalid." within Payment Information section is  displayed
-#    And the URL contains "/hc/checkout/"
+    Then the shipping method "Standard Delivery (4-8 business days)" is displayed
+    And the message "Your card number is invalid." within Payment Information section is displayed
+    And the URL contains "/hc/checkout/"

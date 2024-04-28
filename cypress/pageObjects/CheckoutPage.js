@@ -45,4 +45,14 @@ export class CheckoutPage extends BasePage {
             stripe.find('[name="cvc"]').click().type(elements.cvv,  {delay: 0});
         });
     }
+
+    checkShippingMethod() {
+        cy.contains('Standard Delivery (4-8 business days)').should('be.visible');
+    }
+
+
+    checkCreditCardError(error) {
+        cy.get('.InputError_invalid__lM5RH').should('be.visible')
+        cy.get('.InputError_invalid__lM5RH').should('contain.text', error)
+    }
 }
