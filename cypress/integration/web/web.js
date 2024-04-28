@@ -34,14 +34,15 @@ When(/^the user clicks on the "([^"]*)" button and proceed to checkout from the 
 When(/^the user completes email data and shipping Address data with the following information$/, (datatable) => {
     page.clickButton(possibleButtons['proceed to checkout']);
     page.checkURL('checkout.shapermint.com/hc/checkout/');
-    checkoutPage.completeCheckoutFields(datatable);
-});
-
-When(/^the user completes credit card data with the following information$/, () => {
+    checkoutPage.completeShippingFields(datatable);
 
 });
 
-Then(/^the shipping method "Standard Delivery \(4\-8 business days\)" is displayed$/, () => {
+When(/^the user completes credit card data with the following information$/, (datatable) => {
+    checkoutPage.completePaymentFields(datatable)
+});
+
+Then(/^the shipping method "([^"]*)" is displayed$/, () => {
 
 });
 
