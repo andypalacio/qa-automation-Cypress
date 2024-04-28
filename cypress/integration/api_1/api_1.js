@@ -1,6 +1,8 @@
 const {Given, When, Then, DataTable} = require("@badeball/cypress-cucumber-preprocessor")
 let users = [];
 let activeUser = 0;
+let lastResponse = {}
+let newUserName = '';
 
 Given(/^I get the list of users$/, () => {
     cy.request({
@@ -21,7 +23,7 @@ Then(/^I get the folowing details of the user$/, function (datatable) {
     const dat = datatable.hashes().pop()
     cy.request({
         method: 'GET',
-        url: `https://gorest.co.in/public/v1/users/${activeUser}`,
+        url: `https://gorest.co.in/public/v1/users/${activeUser}`
     }).then((response) => {
         expect(response.body.data.status).to.equal(dat.status)
         expect(response.status).to.equal(parseInt(dat.statusCode));
