@@ -21,6 +21,6 @@
     }
   },
   "stepDefinitions": [
-    "cypress/e2e/[filepath]/*/.{js,ts}"
+    "cypress/integration/[filepath]/*/.{js,ts}"
   ]
   }

@@ -1,7 +1,6 @@
 
-# Dependency directories
 node_modules/
-
 .idea
-
 .DS_Store
+cypress/screenshots
+cucumber-report.json
