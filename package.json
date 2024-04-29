@@ -7,7 +7,6 @@
     "url": "https://github.com/andypalacio/trafilea-challenge-qa-automation"
   },
   "scripts": {
-    "test-allure": "npx cypress run --reporter allure-mocha",
     "allure-report": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   },
   "author": "Andres Palacio",
