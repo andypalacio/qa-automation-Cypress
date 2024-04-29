@@ -19,6 +19,7 @@ To run the automated tests, you will need to have the following installed:
 - [Node.js](https://nodejs.org/) y npm
 - [Cypress](https://www.cypress.io/)
 - [Cypress-cucumber-preprocessor](https://github.com/TheBrainFamily/cypress-cucumber-preprocessor)
+- [Cypress-allure](https://github.com/allure-framework/allure-js/tree/main/packages/allure-cypress)
 
 ## Installation
 
@@ -39,6 +40,11 @@ You can execute the test cases headed, using the following command
 Otherwise, you can run them headless using
 
       npx cypress run
+
+### Open the report
+To open the results report you can run
+
+    npm run allure-report
 
 ## Contact
 
