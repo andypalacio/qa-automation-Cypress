@@ -19,6 +19,6 @@
   },
   "cypress-cucumber-preprocessor": {},
   "stepDefinitions": [
-    "cypress/integration/[filepath]/*/.{js,ts}"
+    "cypress/e2e/[filepath]/*/.{js,ts}"
   ]
 }
