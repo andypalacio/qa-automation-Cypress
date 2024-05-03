@@ -1,12 +1,10 @@
-# trafilea-challenge-qa-automation
-
-This repository contains the code developed as part of the QA test automation challenge for Trafilea.
+# qa-automation-Cypress
 
 ## Description
 
-The QA test automation challenge for Trafilea consists of developing a set of automated tests to verify the correct functioning of certain functionalities of a web application and API.
+These tests consist of developing a set of automated tests to verify the correct functioning of certain functionalities of a web application and API.
 
-the test created are:
+the tests created are:
 
 * **web**: Validating that a user cannot complete a payment with an invalid credit card.
 * **api_1**: Validating that you can get a user list to get details of an active user
@@ -43,4 +41,4 @@ Otherwise, you can run them headless using
 ## Contact
 
 * Andres Palacio - andresepalacio@gmail.com
-* Project Link: https://github.com/andypalacio/trafilea-challenge-qa-automation
+* Project Link: https://github.com/andypalacio/qa-automation-Cypress
